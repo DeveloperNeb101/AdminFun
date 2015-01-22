@@ -28,6 +28,12 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\inventory\InventoryOpenEvent;
 
 class AdminFun extends PluginBase implements Listener{
+	public function onEnable(){
+		$this->frozen = [];
+		$this->invlock = [];
+		$this->getServer()->getPluginManager()->registerEvents($this,$this);
+		$this->getLogger()->info(TextFormat::GREEN." Enabled!");
+	}
 	public function onCommand(Issuer $issuer,Command $cmd,$label,array $args){
 		$permission = "Sorry, you have no permission for this!";
 		if($issuer instanceof Player){
@@ -114,8 +120,8 @@ class AdminFun extends PluginBase implements Listener{
 					    if($target != null){
 					    	if(is_numeric($size)){
 					    		$explode = Explosion($target->getPosition(), $size);
-								$explode->explode();
-								$issuer->sendMessage("You exploded $args[0]!");
+							$explode->explode();
+							$issuer->sendMessage("You exploded $args[0]!");
 					    	}else{
 					    		$issuer->sendMessage("Size must be a number!");
 								return true;
