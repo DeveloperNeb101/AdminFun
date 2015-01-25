@@ -44,11 +44,11 @@ class AdminFun extends PluginBase implements Listener{
 						$issuer->sendMessage("Usage: /announce <message>");
 						return true;
 					}else{
-						$issuer->sendMessage(TextFormat::RED."$permission");
+						$issuer->sendMessage(TextFormat::RED." ".$permission);
 						return true;
 					}
 				}else{
-					$this->getServer()->broadcastMessage("$args");
+					$this->getServer()->broadcastMessage($args);
 					return true;
 				}
 			break;
@@ -58,11 +58,11 @@ class AdminFun extends PluginBase implements Listener{
 						$issuer->sendMessage("Usage: /bgod <message>");
 						return true;
 					}else{
-						$issuer->sendMessage(TextFormat::RED."$permission");
+						$issuer->sendMessage(TextFormat::RED." ".$permission);
 						return true;
 					}
 				}else{
-					$this->getServer()->broadcastMessage("[GOD] $args");
+					$this->getServer()->broadcastMessage("[GOD] ".$args);
 					return true;
 				}
 			break;
@@ -72,11 +72,11 @@ class AdminFun extends PluginBase implements Listener{
 						$issuer->sendMessage("Usage: /bherobrine <message>");
 						return true;
 					}else{
-						$issuer->sendMessage(TextFormat::RED."$permission");
+						$issuer->sendMessage(TextFormat::RED." ".$permission);
 						return true;
 					}
 				}else{
-					$this->getServer()->broadcastMessage("[HEROBRINE] $args");
+					$this->getServer()->broadcastMessage("[HEROBRINE] ". $args);
 					return true;
 				}
 			break;
@@ -86,11 +86,11 @@ class AdminFun extends PluginBase implements Listener{
 						$issuer->sendMessage("Usage: /console <message>");
 						return true;
 					}else{
-						$issuer->sendMessage(TextFormat::RED."$permission");
+						$issuer->sendMessage(TextFormat::RED." ".$permission);
 						return true;
 					}
 				}else{
-					$this->getServer()->broadcastMessage("[CONSOLE] $args");
+					$this->getServer()->broadcastMessage("[CONSOLE] ".$args);
 					return true;
 				}
 			break;
@@ -100,7 +100,7 @@ class AdminFun extends PluginBase implements Listener{
 						$issuer->sendMessage("Usage: /explode <player> <size>");
 						return true;
 					}else{
-						$issuer->sendMessage(TextFormat::RED."$permission");
+						$issuer->sendMessage(TextFormat::RED." ".$permission);
 						return true;
 					}
 			    }
@@ -110,7 +110,7 @@ class AdminFun extends PluginBase implements Listener{
 					    $issuer->sendMessage("Usage: /explode <player> <size>");
 					    return true;
 					}else{
-						$issuer->sendMessage(TextFormat::RED."$permission");
+						$issuer->sendMessage(TextFormat::RED." ".$permission);
 						return true;
 					}
 				}
@@ -121,7 +121,7 @@ class AdminFun extends PluginBase implements Listener{
 					    	if(is_numeric($size)){
 					    		$explode = Explosion($target->getPosition(), $size);
 							$explode->explode();
-							$issuer->sendMessage("You exploded $args[0]!");
+							$issuer->sendMessage("You exploded ".$args[0]);
 					    	}else{
 					    		$issuer->sendMessage("Size must be a number!");
 								return true;
@@ -131,7 +131,7 @@ class AdminFun extends PluginBase implements Listener{
 							return true;
 					    }
 					}else{
-						$issuer->sendMessage(TextFormat::RED."$permission");
+						$issuer->sendMessage(TextFormat::RED." ".$permission);
 						return true;
 					}
 				}
